@@ -1,0 +1,43 @@
+<a class="btn btn-danger" href="#/books">Go Back</a>
+<div class="panel panel-success" ng-init="getBook()">
+    <div class="panel-heading" style="color: white"><strong>{{book.title}}</strong></div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-4">
+                <img class="img-responsive" src="{{book.image_url}}">
+            </div>
+            <div class="col-md-8">
+                <p>{{book.description}}</p>
+                <ul class="list-group">
+                    <li class="list-group-item">Genres: {{book.genre}}</li>
+                    <li class="list-group-item">Author: {{book.author}}</li>
+                    <li class="list-group-item">Publisher: {{book.publisher}}</li>
+                    <li class="list-group-item">Pages: {{book.page}}</li>
+                </ul>
+                <a target="_blank" class="btn btn-raised btn-info" href="{{book.buy_url}}">Buy Book</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="pull-right">
+    <a href="#/books/edit/{{book._id}}">Edit</a> | <a data-toggle="modal" data-target="#myModal">Delete</a>
+</div>
+
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">Want Delete</h4>
+            </div>
+            <div class="modal-body">
+                <p>Delete Data</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <a href="#" ng-click="removeBook(book._id)"><button type="button" class="btn btn-primary" data-dismiss="modal">Yes</button></a>
+            </div>
+        </div>
+    </div>
+</div>

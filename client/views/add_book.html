@@ -1,0 +1,97 @@
+<a class="btn btn-danger" href="#/books">Go Back</a>
+<div class="panel panel-success">
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-12">
+            <form class="form-horizontal" id="form" ng-submit="addBook()" novalidate>
+                <center><legend><b>Add Book</b></legend></center>
+                <fieldset>
+                    <div class="form-group">
+                        <label for="input1"  class="col-md-2 control-label">Title</label>
+
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" id="input1"  ng-model="book.title" placeholder="Title" data-smk-msg="Please fill out this field" required>
+
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="select111" class="col-md-2 control-label">Genre</label>
+
+                        <div class="col-md-10">
+                            <select id="select111" ng-model="book.genre" class="form-control">
+                                <option>PHP</option>
+                                <option>Node</option>
+                                <option>Javascript</option>
+                                <option>Java</option>
+                                <option>python</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="input3" class="col-md-2 control-label">Author</label>
+
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" id="input3" ng-model="book.author" placeholder="Author" data-smk-msg="Please fill out this field" required>
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="input4" class="col-md-2 control-label">Publisher</label>
+
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" id="input4" ng-model="book.publisher" placeholder="Publisher" data-smk-msg="Please fill out this field" required>
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="input5" class="col-md-2 control-label">Pages</label>
+
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" id="input5" ng-model="book.page" placeholder="Pages" data-smk-msg="Please fill out this field" required>
+
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="textArea" class="col-md-2 control-label">Description</label>
+
+                        <div class="col-md-10">
+                            <textarea class="form-control" rows="3" id="textArea" ng-model="book.description" placeholder="Description" data-smk-msg="Please fill out this field" required></textarea>
+
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="input6" class="col-md-2 control-label">Image URL</label>
+
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" id="input6" ng-model="book.image_url" placeholder="Image URL" data-smk-msg="Please fill out this field" required>
+                            <img src="{{book.image_url}}" width="150" height="150" class="img-responsive">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="input7" class="col-md-2 control-label">Buy URL</label>
+
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" id="input7" ng-model="book.buy_url" placeholder="Buy URL" data-smk-msg="Please fill out this field" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-10 col-md-offset-2">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="reset" class="btn btn-default">Reset</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $('#form').smkValidate();
+</script>
